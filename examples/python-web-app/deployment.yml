@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deepu
+  template:
+    metadata:
+      labels:
+        app: deepu 
+    spec:
+      containers:
+      - name: deepu-container
+        image: vasu502/file1:1
+        ports:
+        - containerPort: 8000
